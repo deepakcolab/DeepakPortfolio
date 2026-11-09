@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { Hero } from './components/hero/Hero';
@@ -11,7 +12,7 @@ import { Achievements } from './components/achievements/Achievements';
 import { Terminal } from './components/terminal/Terminal';
 import { Contact } from './components/contact/Contact';
 
-export const App: React.FC = () => {
+const PortfolioContent: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
@@ -33,8 +34,8 @@ export const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#080808] text-white selection:bg-amber-500/30 selection:text-amber-300 font-sans antialiased overflow-x-hidden">
-      {/* Top Navbar */}
+    <div className="min-h-screen bg-slate-50 dark:bg-[#080808] text-slate-900 dark:text-white selection:bg-amber-500/25 selection:text-amber-700 dark:selection:text-amber-300 font-sans antialiased overflow-x-hidden transition-colors duration-200">
+      {/* Top Navbar with Theme Toggle */}
       <Navbar activeSection={activeSection} />
 
       <main>
@@ -69,6 +70,14 @@ export const App: React.FC = () => {
       {/* Footer */}
       <Footer />
     </div>
+  );
+};
+
+export const App: React.FC = () => {
+  return (
+    <ThemeProvider>
+      <PortfolioContent />
+    </ThemeProvider>
   );
 };
 

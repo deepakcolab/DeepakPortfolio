@@ -1,35 +1,47 @@
 <!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Deepak Singh | Senior Software Developer & .NET Engineer</title>
+    <title>Deepak Singh | Software Developer & .NET Engineer</title>
     
     <!-- Meta tags for SEO -->
-    <meta name="description" content="Senior Software Developer specializing in enterprise .NET applications, high-performance backends, database architecture, and AI-driven automation." />
-    <meta name="keywords" content="Deepak Singh, Deepak Kumar Singh, Senior Software Developer, .NET Core, ASP.NET MVC, C#, SQL Server, AI Enthusiast, Full Stack Developer, Noida, Portfolio" />
+    <meta name="description" content="Software Developer specializing in enterprise .NET applications, high-performance backends, database architecture, and AI-driven automation." />
+    <meta name="keywords" content="Deepak Singh, Deepak Kumar Singh, Software Developer, .NET Core, ASP.NET MVC, C#, SQL Server, AI Enthusiast, Full Stack Developer, Noida, Portfolio" />
     <meta name="author" content="Deepak Kumar Singh" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://deepaksingh.dev/" />
-    <meta property="og:title" content="Deepak Singh | Senior Software Developer & .NET Engineer" />
+    <meta property="og:title" content="Deepak Singh | Software Developer & .NET Engineer" />
     <meta property="og:description" content="I turn complex ideas into powerful digital experiences. Enterprise .NET engineering, scalable architectures, and intelligent AI automation." />
     <meta property="og:image" content="/images/deepak-singh.jpg" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Deepak Singh | Senior Software Developer & .NET Engineer" />
-    <meta property="twitter:description" content="Senior Software Developer specializing in enterprise .NET applications and scalable systems." />
+    <meta property="twitter:title" content="Deepak Singh | Software Developer & .NET Engineer" />
+    <meta property="twitter:description" content="Software Developer specializing in enterprise .NET applications and scalable systems." />
     <meta property="twitter:image" content="/images/deepak-singh.jpg" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Inline script: Default to Light mode unless explicitly stored as 'dark' -->
+    <script>
+      (function() {
+        var saved = localStorage.getItem('deepak_portfolio_theme');
+        if (saved === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
   </head>
-  <body class="bg-[#080808] text-white selection:bg-amber-500/30 selection:text-amber-300 font-sans antialiased overflow-x-hidden">
+  <body class="bg-slate-50 text-slate-900 dark:bg-[#080808] dark:text-white selection:bg-amber-500/25 selection:text-amber-700 dark:selection:text-amber-300 font-sans antialiased overflow-x-hidden transition-colors duration-200">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

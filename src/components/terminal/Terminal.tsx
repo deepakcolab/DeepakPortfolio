@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Terminal as TerminalIcon, CornerDownLeft, Sparkles, Copy, Check, Maximize2 } from 'lucide-react';
+import { Terminal as TerminalIcon, CornerDownLeft, Copy, Check } from 'lucide-react';
 import { profileData } from '../../data/profile';
-import { skillsData } from '../../data/skills';
 import { projectsData } from '../../data/projects';
 import { experiencesData } from '../../data/experience';
 import { educationData } from '../../data/education';
@@ -45,7 +44,6 @@ export const Terminal: React.FC = () => {
     const trimmed = cmd.trim().toLowerCase();
     if (!trimmed) return;
 
-    // Add to history list
     setCmdHistory((prev) => [...prev, cmd]);
     setCmdHistoryIdx(-1);
 
@@ -171,7 +169,6 @@ export const Terminal: React.FC = () => {
             </a>
           </div>
         );
-        // Also trigger download
         window.open('/documents/Deepak-Singh-Resume.pdf', '_blank');
         break;
 
@@ -252,19 +249,19 @@ export const Terminal: React.FC = () => {
   };
 
   return (
-    <section id="terminal" className="py-24 bg-[#0a0a0a] relative overflow-hidden">
+    <section id="terminal" className="py-24 bg-slate-100/50 dark:bg-[#0a0a0a] relative overflow-hidden transition-colors duration-200">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-mono text-amber-400 uppercase tracking-widest mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 text-xs font-mono text-amber-600 dark:text-amber-400 uppercase tracking-widest mb-3 shadow-sm">
             <TerminalIcon className="w-3.5 h-3.5" />
             <span>Interactive Environment</span>
           </div>
-          <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-white tracking-tight uppercase">
+          <h2 className="font-display font-black text-3xl sm:text-4xl md:text-5xl text-slate-950 dark:text-white tracking-tight uppercase">
             DEVELOPER CONSOLE
           </h2>
-          <p className="text-sm sm:text-base text-zinc-400 mt-4 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-slate-600 dark:text-zinc-400 mt-4 max-w-2xl mx-auto">
             Interact with Deepak's portfolio through an interactive Unix-style shell simulation.
           </p>
           <div className="w-16 h-1 bg-amber-500 mx-auto mt-4 rounded-full"></div>
@@ -272,12 +269,12 @@ export const Terminal: React.FC = () => {
 
         {/* Quick Command Chips for Touch & Mobile Users */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
-          <span className="text-xs font-mono text-zinc-500 mr-1 hidden sm:inline">Quick shortcuts:</span>
+          <span className="text-xs font-mono text-slate-500 dark:text-zinc-500 mr-1 hidden sm:inline">Quick shortcuts:</span>
           {quickCommands.map((cmd) => (
             <button
               key={cmd}
               onClick={() => executeCommand(cmd)}
-              className="px-3 py-1 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-amber-500/40 text-xs font-mono text-amber-400 transition-colors focus:outline-none"
+              className="px-3 py-1 rounded-lg bg-white dark:bg-zinc-900 hover:bg-slate-50 dark:hover:bg-zinc-800 border border-slate-200 dark:border-zinc-800 hover:border-amber-500/40 text-xs font-mono text-amber-600 dark:text-amber-400 transition-colors focus:outline-none shadow-sm"
             >
               {cmd}
             </button>
@@ -285,7 +282,7 @@ export const Terminal: React.FC = () => {
         </div>
 
         {/* Terminal Window Container */}
-        <div className="rounded-3xl bg-[#0d0d0d] border border-white/10 shadow-2xl overflow-hidden font-mono text-sm">
+        <div className="rounded-3xl bg-[#0d0d0d] border border-slate-300 dark:border-white/10 shadow-2xl overflow-hidden font-mono text-sm text-white">
           
           {/* Terminal Window Title Bar */}
           <div className="bg-zinc-900/90 px-4 py-3 border-b border-zinc-800 flex items-center justify-between">
@@ -304,7 +301,7 @@ export const Terminal: React.FC = () => {
                 className="text-zinc-400 hover:text-white transition-colors text-xs flex items-center gap-1 focus:outline-none"
                 title="Copy Terminal History"
               >
-                {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5 text-zinc-400" />}
                 <span className="hidden sm:inline">{copied ? 'Copied' : 'Copy'}</span>
               </button>
               <button
@@ -319,7 +316,7 @@ export const Terminal: React.FC = () => {
           {/* Terminal Body */}
           <div 
             onClick={() => inputRef.current?.focus()}
-            className="p-5 sm:p-6 min-h-[360px] max-h-[480px] overflow-y-auto space-y-4 cursor-text bg-black/60"
+            className="p-5 sm:p-6 min-h-[360px] max-h-[480px] overflow-y-auto space-y-4 cursor-text bg-black/75"
           >
             {history.map((item) => (
               <div key={item.id} className="space-y-1.5">
