@@ -56,7 +56,7 @@ export const Hero: React.FC = () => {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
               </span>
               <span className="text-xs font-mono font-medium tracking-wider uppercase text-amber-600 dark:text-amber-400">
-                HELLO, I'M DEEPAK SINGH
+                HELLO, I'M DEEPAK KUMAR SINGH
               </span>
             </motion.div>
 

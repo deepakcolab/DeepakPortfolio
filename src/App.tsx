@@ -35,11 +35,11 @@ const PortfolioContent: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-[#080808] text-slate-900 dark:text-white selection:bg-amber-500/25 selection:text-amber-700 dark:selection:text-amber-300 font-sans antialiased overflow-x-hidden transition-colors duration-200">
-      {/* Top Navbar with Theme Toggle */}
+   
       <Navbar activeSection={activeSection} />
 
       <main>
-        {/* Hero Section */}
+      
         <Hero />
 
         {/* About Section */}
